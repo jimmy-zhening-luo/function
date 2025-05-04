@@ -2,9 +2,9 @@
   "$pkg": "2215.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
-  "name": "packagename",
+  "name": "@scoping/functions",
   "version": "0.0.0",
-  "repository": "github:jimmy-zhening-luo/REPO",
+  "repository": "github:jimmy-zhening-luo/functions",
   "private": true,
   "engineStrict": true,
   "engines": {
@@ -83,7 +83,7 @@
     "tag": "next"
   },
   "license": "MIT",
-  "description": "",
+  "description": "My private Azure Functions for scheduled automations.",
   "keywords": [],
   "author": "Jimmy Zhening Luo <jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
