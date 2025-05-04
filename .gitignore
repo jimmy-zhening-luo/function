@@ -5,6 +5,8 @@
 
 # https://git-scm.com/docs/gitignore
 
+/local.settings.json
+
 #region Root Dir
 # Build
 /dist/
