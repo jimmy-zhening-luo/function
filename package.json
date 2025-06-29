@@ -1,5 +1,5 @@
 {
-  "$pkg": "2216.0.0",
+  "$pkg": "2217.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -8,24 +8,24 @@
   "private": true,
   "engineStrict": true,
   "engines": {
-    "node": ">=22.16.0",
-    "npm": ">=11.4.0 <12"
+    "node": ">=22.17.0",
+    "npm": ">=11.4.2 <12"
   },
   "type": "module",
   "peerDependenciesMeta": {},
   "dependencies": {
-    "@azure/functions": "^4.7.0"
+    "@azure/functions": "^4.7.3"
   },
   "devDependencies": {
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "chai": "^5.2.0",
-    "eslint": "~9.27.0",
-    "linted": "~28.35.0",
-    "mocha": "^11.4.0",
+    "eslint": "~9.30.0",
+    "linted": "~29.0.0",
+    "mocha": "^11.7.1",
     "npm-run-all": "^4.1.5",
     "run-script-os": "^1.1.6",
-    "ts-add-js-extension": "^1.6.5",
+    "ts-add-js-extension": "^1.6.6",
     "typescript": "^5.8.3"
   },
   "main": "dist/index.js",
