@@ -13,6 +13,11 @@ async function hello(
     "Http function was triggered.",
   );
 
+  if (request.url === "")
+    context.log(
+      "Pointless log so that TypeScript doesn't complain about not using param.",
+    );
+
   return {
     body: "Hello, world!",
   };
