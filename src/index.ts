@@ -1,9 +1,9 @@
 import {
   app,
   HttpRequest,
-  HttpResponseInit,
   InvocationContext,
 } from "@azure/functions";
+import type { HttpResponseInit } from "@azure/functions";
 
 async function hello(
   request: HttpRequest,
