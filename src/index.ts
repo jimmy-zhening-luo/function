@@ -1,13 +1,15 @@
 import {
   app,
+} from "@azure/functions";
+import type {
+  HttpResponseInit,
   HttpRequest,
   InvocationContext,
 } from "@azure/functions";
-import type { HttpResponseInit } from "@azure/functions";
 
 async function hello(
   request: HttpRequest,
-  context: InvocationContext
+  context: InvocationContext,
 ): Promise<HttpResponseInit> {
   context.log(
     "Http function was triggered.",
