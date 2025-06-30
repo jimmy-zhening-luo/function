@@ -25,6 +25,6 @@ app.http(
       "GET",
       "POST",
     ],
-    handler: helloWorld1,
+    handler: hello,
   },
 );
