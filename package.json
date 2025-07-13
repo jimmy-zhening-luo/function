@@ -70,7 +70,7 @@
     "start": "run-os",
     "start:default": "npm run start:lang:$npm_package_config_language",
     "start:windows": "npm run start:lang:%npm_package_config_language%",
-    "start:lang:ts": "func start",
+    "start:lang:ts": "func start --verbose",
     "start:lang:svelte": "vite preview --open",
     "prepublishOnly": "npm test",
     "postpublish": "run-os",
