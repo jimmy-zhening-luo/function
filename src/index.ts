@@ -30,6 +30,7 @@ app.http(
       "GET",
       "POST",
     ],
+    route: "hello/world",
     handler: hello,
   },
 );
