@@ -2,8 +2,8 @@ import {
   app,
 } from "@azure/functions";
 import type {
-  HttpResponseInit,
   HttpRequest,
+  HttpResponseInit,
   InvocationContext,
 } from "@azure/functions";
 
