@@ -20,6 +20,7 @@
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.0.13",
+    "azure-functions-core-tools": "^4.0.7512",
     "chai": "^5.2.1",
     "eslint": "~9.31.0",
     "linted": "~30.2.0",
