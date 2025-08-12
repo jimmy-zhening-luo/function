@@ -22,7 +22,7 @@
     "@types/node": "^24.2.1",
     "azure-functions-core-tools": "^4.1.0",
     "chai": "^5.2.1",
-    "linted": "~30.11.1",
+    "linted": "~30.12.0",
     "mocha": "^11.7.1",
     "ts-add-js-extension": "^1.6.6",
     "typescript": "^5.9.2"
