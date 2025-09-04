@@ -10,8 +10,10 @@ node_modules/typescript/
 
 #region Project
 .vscode/
-*.env.example
 *.eslintcache
+*.env
+*.env.*
+local.settings.json
 #endregion
 
 #region Dependencies
