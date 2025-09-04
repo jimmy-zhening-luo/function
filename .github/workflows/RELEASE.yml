@@ -1,6 +1,6 @@
---- # RELEASE.yml
+--- # PROD.main.yml
 name: Azure Function deploy
-on: { push: { tags: ['v[0-9]+.[0-9]+.[0-9]+'] } }
+on: { push: { branches: [main] } }
 jobs:
   build:
     name: Build/Stage
