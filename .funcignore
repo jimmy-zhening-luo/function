@@ -33,6 +33,7 @@ node_modules/**
 
 #region Built
 *.spec.js
+*.ts.map
 *.tsbuildinfo
 #endregion
 
