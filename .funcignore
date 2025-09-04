@@ -10,6 +10,12 @@ node_modules/typescript/
 
 #region Project
 .vscode/
+.github/
+LICENSE
+README.md
+.mocharc.yml
+.markdownlint.jsonc
+eslint.config.js
 *.eslintcache
 #endregion
 
