@@ -1,73 +1,57 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js project to Azure Function App - jo
-
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '22.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
-
+--- # main_jo.yml
+name: Azure Function deploy
+on: { push: { branches: [main] } }
 jobs:
   build:
+    name: Build/Stage
+    permissions: { contents: read }
     runs-on: windows-latest
-    permissions:
-      contents: read #This is required for actions/checkout
-      
     steps:
-      - name: 'Checkout GitHub Action'
+      - name: Checkout
+        id: checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node ${{ env.NODE_VERSION }} Environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: 'Resolve Project Dependencies Using Npm'
+      - name: Install Node
+        id: node
+        uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install Dependencies
+        id: ci
+        run: npm ci
+      - name: Build Function App
+        id: build
         shell: pwsh
-        run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-          popd
-
-      - name: Upload artifact for deployment job
+        run: npm run deploy
+      - name: Stage to Azure Functions
+        id: stage
         uses: actions/upload-artifact@v4
         with:
           name: node-app
           path: .
-
   deploy:
-    runs-on: windows-latest
+    name: Deploy
     needs: build
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
-
+      id-token: write
+      contents: read
+    runs-on: windows-latest
     steps:
-      - name: Download artifact from build job
+      - name: Download Staged Function App
+        id: download
         uses: actions/download-artifact@v4
+        with: { name: node-app }
+      - name: Authenticate to Azure
+        id: auth
+        uses: Azure/login@v2
         with:
-          name: node-app
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3034D1B136904402BF0455EAC32E3E58 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DB8A0D0B724C45D09A05D2B620297020 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9E0B741A5C8640DB87DCC64CCE0370DF }}
-
-      - name: 'Run Azure Functions Action'
+          client-id: ${{secrets.AZUREAPPSERVICE_CLIENTID_3034D1B136904402BF0455EAC32E3E58}}
+          tenant-id: ${{secrets.AZUREAPPSERVICE_TENANTID_DB8A0D0B724C45D09A05D2B620297020}}
+          subscription-id: ${{secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9E0B741A5C8640DB87DCC64CCE0370DF}}
+      - name: Deploy Azure Function App
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'jo'
-          slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          
+          app-name: jo
+          slot-name: Production
+          package: .
+
+...
