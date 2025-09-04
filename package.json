@@ -5,7 +5,7 @@
   "name": "@scoping/functions",
   "version": "0.2.0",
   "repository": "github:jimmy-zhening-luo/functions",
-  "description": "My private Azure Functions for scheduled automations.",
+  "description": "My Azure Functions for scheduled automations",
   "keywords": [],
   "license": "MIT",
   "private": true,
