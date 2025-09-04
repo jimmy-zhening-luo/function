@@ -16,7 +16,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@azure/functions": "^4.7.3"
+    "@azure/functions": "4.7.2"
   },
   "devDependencies": {
     "@types/chai": "^5.2.2",
