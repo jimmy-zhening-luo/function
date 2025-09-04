@@ -28,7 +28,6 @@
     "typescript": "^5.9.2"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "clean": "cmd --% /c \"(if exist dist rmdir /s /q dist) & (if exist .eslintcache del /f /q .eslintcache)\" || rm -rf dist .eslintcache",
     "prebuild": "npm run clean",
