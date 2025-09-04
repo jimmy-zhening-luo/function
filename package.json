@@ -26,7 +26,6 @@
     "chai": "^6.0.1",
     "linted": "~30.19.3",
     "mocha": "^11.7.2",
-    "ts-add-js-extension": "^1.6.6",
     "typescript": "^5.9.2"
   },
   "main": "dist/index.js",
