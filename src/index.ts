@@ -1,6 +1,4 @@
-import {
-  app,
-} from "@azure/functions";
+import { app } from "@azure/functions";
 import type {
   HttpRequest,
   HttpResponseInit,
@@ -11,12 +9,12 @@ async function hello(
   request: HttpRequest,
   context: InvocationContext,
 ): Promise<HttpResponseInit> {
-  context.log(
-    "Http function was triggered.",
-  );
+  context.log("Function invoked");
 
   if (typeof request !== "undefined")
-    context.log("OK");
+    context.log("Function received request");
+
+  context.log("Function responding 'Hello'");
 
   return {
     body: "Hello, world!",
@@ -30,7 +28,7 @@ app.http(
       "GET",
       "POST",
     ],
-    route: "hello/world",
+    route: "hello",
     handler: hello,
   },
 );
