@@ -11,6 +11,9 @@ node_modules/typescript/
 #region Project
 .vscode/
 *.eslintcache
+#endregion
+
+#region Secrets
 *.env
 *.env.*
 local.settings.json
