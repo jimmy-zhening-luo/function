@@ -41,7 +41,7 @@
     "prestart": "npm run --ignore-scripts build",
     "start": "node .",
     "predeploy": "npm test",
-    "deploy": ""
+    "deploy": "npm ci --omit dev"
   },
   "author": "Jimmy Zhening Luo <jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
