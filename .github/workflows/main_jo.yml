@@ -1,6 +1,6 @@
 --- # main_jo.yml
 name: Azure Function deploy
-on: { push: { branches: [main] } }
+on: { push: { tags: ['v[0-9]+.[0-9]+.[0-9]+'] } }
 jobs:
   build:
     name: Build/Stage
@@ -19,7 +19,6 @@ jobs:
         run: npm ci
       - name: Build Function App
         id: build
-        shell: pwsh
         run: npm run deploy
       - name: Stage to Azure Functions
         id: stage
@@ -46,7 +45,7 @@ jobs:
           client-id: ${{secrets.AZUREAPPSERVICE_CLIENTID_3034D1B136904402BF0455EAC32E3E58}}
           tenant-id: ${{secrets.AZUREAPPSERVICE_TENANTID_DB8A0D0B724C45D09A05D2B620297020}}
           subscription-id: ${{secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9E0B741A5C8640DB87DCC64CCE0370DF}}
-      - name: Deploy Azure Function App
+      - name: Run Azure Functions Action
         uses: Azure/functions-action@v1
         id: fa
         with:
