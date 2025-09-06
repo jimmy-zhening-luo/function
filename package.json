@@ -16,14 +16,14 @@
   },
   "type": "module",
   "dependencies": {
-    "@azure/functions": "4.7.2"
+    "@azure/functions": "4.7.3"
   },
   "devDependencies": {
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.3.0",
+    "@types/node": "^24.3.1",
     "chai": "^6.0.1",
-    "linted": "~30.19.3",
+    "linted": "~31.1.0",
     "mocha": "^11.7.2",
     "typescript": "^5.9.2"
   },
