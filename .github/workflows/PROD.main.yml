@@ -16,7 +16,7 @@ jobs:
         with: { node-version: 22 }
       - name: Install Dependencies
         id: ci
-        run: npm ci
+        run: npm ci --loglevel=error --fund=false
       - name: Build Function App
         id: build
         run: npm run deploy
