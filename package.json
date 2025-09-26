@@ -23,7 +23,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.5.2",
     "chai": "^6.0.1",
-    "linted": "~31.2.3",
+    "linted": "~31.2.7",
     "mocha": "^11.7.2",
     "typescript": "^5.9.2"
   },
