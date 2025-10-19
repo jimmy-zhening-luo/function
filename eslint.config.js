@@ -4,7 +4,7 @@ export default linted(
   {
     ts: {
       rules: {
-        "@typescript-eslint/require-await": "off",
+        "ts/require-await": 0,
       },
     },
   },
