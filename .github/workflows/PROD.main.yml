@@ -1,10 +1,10 @@
 --- # PROD.main.yml
 name: Azure Function deploy
-on: { push: { branches: [main] } }
+on: {push: {branches: [main]} }
 jobs:
   build:
     name: Build/Stage
-    permissions: { contents: read }
+    permissions: {contents: read}
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -13,7 +13,7 @@ jobs:
       - name: Install Node
         id: node
         uses: actions/setup-node@v4
-        with: { node-version: 22 }
+        with: {node-version: 22}
       - name: Install Dependencies
         id: ci
         run: npm ci --loglevel=error --fund=false
@@ -37,7 +37,7 @@ jobs:
       - name: Download Staged Function App
         id: download
         uses: actions/download-artifact@v4
-        with: { name: node-app }
+        with: {name: node-app}
       - name: Authenticate to Azure
         id: auth
         uses: Azure/login@v2
