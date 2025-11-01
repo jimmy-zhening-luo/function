@@ -1,5 +1,5 @@
 {
-  "$pkg": "2411.0.0",
+  "$pkg": "2411.4.1",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -15,33 +15,29 @@
     "npm": "^11"
   },
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@azure/functions": "4.8.0"
   },
   "devDependencies": {
-    "@types/chai": "^5.2.3",
-    "@types/mocha": "^10.0.10",
     "@types/node": "^24.9.2",
-    "chai": "^6.2.0",
-    "linted": "~33.4.0",
-    "mocha": "^11.7.4",
+    "linted": "~33.4.2",
     "typescript": "^5.9.3"
   },
-  "main": "dist/index.js",
   "scripts": {
-    "clean": "cmd --% /c \"(if exist dist rmdir /s /q dist) & (if exist build rmdir /s /q build) & (if exist .eslintcache del /f /q .eslintcache)\" || rm -rf dist build .eslintcache",
-    "prebuild": "npm run clean",
-    "build": "tsc",
-    "postbuild": "npm run lint || echo \"Lint failed. Continuing...\"",
+    "clean": "cmd --% /c \"for %G in (types dist dist-tests build packed) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist dist-tests build packed .eslintcache",
+    "build": "npm run build:ts",
+    "build:ts": "tsc -b src",
+    "postbuild": "npm run lint || exit 0",
     "lint": "eslint --cache --fix",
     "pretest": "npm run build",
-    "test": "npm run --if-present test:runner",
-    "test:runner": "mocha",
-    "prestart": "npm run --ignore-scripts build",
-    "start": "cmd --% /c \"(if exist svelte.config.js (npm run start:svelte) else (npm run start:ts))\" || bash -c 'if [ -f svelte.config.js ]; then npm run start:svelte; else npm run start:ts; fi'",
+    "test": "npm run --if-present test:suite",
+    "prestart": "npm run build",
+    "start": "npm run start:ts",
     "start:ts": "node .",
-    "start:svelte": "vite preview --open",
-    "predeploy": "npm test",
+    "predeploy": "npm run clean && npm test",
+    "stage": "",
     "deploy": "npm ci --omit dev"
   },
   "author": "Jimmy Zhening Luo <jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
