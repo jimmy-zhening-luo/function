@@ -10,8 +10,6 @@
     },
   ],
   "compilerOptions": {
-    // "module": "esnext",
-    // "moduleResolution": "bundler",
     "types": [
       /* @OVERRIDE */
       /* {CONFIGURE} */
@@ -24,7 +22,6 @@
       "esnext",
       /* {CONFIGURE} */
     ],
-    // "target": "esnext",
     // "composite": false,
     // "skipLibCheck": true,
   },
