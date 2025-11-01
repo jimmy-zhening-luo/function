@@ -1,5 +1,5 @@
 {
-  "$pkg": "2411.4.2",
+  "$pkg": "2411.5.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -31,8 +31,9 @@
     "build:ts": "tsc -b src",
     "postbuild": "npm run lint || exit 0",
     "lint": "eslint --cache --fix",
-    "pretest": "npm run build",
+    "pretest": "npm run --ignore-scripts build",
     "test": "npm run --if-present test:suite",
+    "posttest": "npm run postbuild",
     "prestart": "npm run build",
     "start": "npm run start:ts",
     "start:ts": "node .",
