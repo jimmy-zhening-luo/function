@@ -1,5 +1,5 @@
 {
-  "$pkg": "2411.5.0",
+  "$pkg": "2411.6.1",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -22,18 +22,17 @@
   },
   "devDependencies": {
     "@types/node": "^24.9.2",
-    "linted": "~33.4.2",
+    "linted": "~33.4.7",
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "clean": "cmd --% /c \"for %G in (types dist dist-tests build packed) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist dist-tests build packed .eslintcache",
+    "clean": "cmd --% /c \"for %G in (types dist build packed) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .eslintcache",
     "build": "npm run build:ts",
     "build:ts": "tsc -b src",
     "postbuild": "npm run lint || exit 0",
     "lint": "eslint --cache --fix",
-    "pretest": "npm run --ignore-scripts build",
+    "pretest": "npm run build",
     "test": "npm run --if-present test:suite",
-    "posttest": "npm run postbuild",
     "prestart": "npm run build",
     "start": "npm run start:ts",
     "start:ts": "node .",
