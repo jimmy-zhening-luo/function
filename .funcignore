@@ -47,5 +47,4 @@ node_modules/**
 .Trash/
 *.DS_Store
 *.icloud
-.blink*
 #endregion
