@@ -33,6 +33,6 @@
       /* {CONFIGURE} */
     ],
     "target": "esnext",
-    // "skipLibCheck": true,
+    "skipLibCheck": true /* @OVERRIDE */,
   },
 }
