@@ -18,11 +18,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@azure/functions": "4.8.0"
+    "@azure/functions": "^4.9.0"
   },
   "devDependencies": {
-    "@types/node": "^24.9.2",
-    "linted": "~33.4.7",
+    "@types/node": "^24.10.1",
+    "linted": "34.0.3",
     "typescript": "^5.9.3"
   },
   "scripts": {
