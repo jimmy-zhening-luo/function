@@ -1,5 +1,5 @@
 {
-  "$pkg": "2411.6.1",
+  "$pkg": "2411.7.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -18,15 +18,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@azure/functions": "^4.9.0"
+    "@azure/functions": "^4.10.0"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
-    "linted": "35.2.2",
+    "linted": "35.2.3",
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "clean": "cmd --% /c \"for %G in (types dist build packed) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .eslintcache",
+    "clean": "cmd --% /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
     "build": "npm run build:ts",
     "build:ts": "tsc -b src",
     "postbuild": "npm run lint || exit 0",
