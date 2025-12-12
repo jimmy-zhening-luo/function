@@ -1,5 +1,5 @@
 {
-  "$pkg": "2411.7.0",
+  "$pkg": "2412.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -15,14 +15,20 @@
     "npm": "^11"
   },
   "type": "module",
-  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "dependencies": {
     "@azure/functions": "^4.10.0"
   },
   "devDependencies": {
-    "@types/node": "^25.0.0",
-    "linted": "35.2.5",
+    "@types/node": "^25.0.1",
+    "linted": "35.4.1",
     "typescript": "^5.9.3"
   },
   "scripts": {
