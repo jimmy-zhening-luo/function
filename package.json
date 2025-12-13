@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.1",
-    "linted": "35.4.2",
+    "linted": "35.4.3",
     "typescript": "^5.9.3"
   },
   "scripts": {
