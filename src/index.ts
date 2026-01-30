@@ -5,7 +5,6 @@ import type {
   InvocationContext,
 } from "@azure/functions";
 
-/* eslint ts/require-await: 0 */
 async function hello(
   request: HttpRequest,
   context: InvocationContext,
