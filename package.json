@@ -1,5 +1,5 @@
 {
-  "$pkg": "2412.0.0",
+  "$pkg": "2413.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "@scoping/functions",
@@ -32,18 +32,15 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "clean": "cmd --% /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
-    "build": "npm run build:ts",
-    "build:ts": "tsc -b src",
-    "postbuild": "npm run lint || exit 0",
+    "clean": "cmd /q /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
+    "build": "tsc -b src",
+    "prestart": "npm run build",
+    "start": "node .",
     "lint": "eslint --cache --fix",
     "pretest": "npm run build",
-    "test": "npm run --if-present test:suite",
-    "prestart": "npm run build",
-    "start": "npm run start:ts",
-    "start:ts": "node .",
+    "test": "",
+    "posttest": "npm run lint || exit 0",
     "predeploy": "npm run clean && npm test",
-    "stage": "",
     "deploy": "npm ci --omit dev"
   },
   "author": "Jimmy Zhening Luo <1450044+jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
