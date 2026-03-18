@@ -3,7 +3,7 @@
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "$schema": "https://json.schemastore.org/package",
   "name": "@scoping/functions",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "repository": "github:jimmy-zhening-luo/functions",
   "description": "My Azure Functions for scheduled automations",
   "keywords": [],
