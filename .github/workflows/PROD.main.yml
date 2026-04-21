@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Download Staged Function App
         id: download
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with: {name: node-app}
       - name: Authenticate to Azure
         id: auth
