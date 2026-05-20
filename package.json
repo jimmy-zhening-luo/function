@@ -24,10 +24,10 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "dependencies": {
-    "@azure/functions": "^4.14.0"
+    "@azure/functions": "^4.15.0"
   },
   "devDependencies": {
-    "@types/node": "^25.9.0",
+    "@types/node": "^25.9.1",
     "linted": "41.7.1",
     "typescript": "^6.0.3"
   },
