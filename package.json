@@ -24,7 +24,7 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "dependencies": {
-    "@azure/functions": "^4.16.0"
+    "@azure/functions": "^4.16.1"
   },
   "devDependencies": {
     "@types/node": "^25.9.3",
