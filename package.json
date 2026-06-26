@@ -27,8 +27,8 @@
     "@azure/functions": "^4.16.1"
   },
   "devDependencies": {
-    "@types/node": "^26.0.0",
-    "linted": "41.12.2",
+    "@types/node": "^26.0.1",
+    "linted": "41.12.3",
     "typescript": "^6.0.3"
   },
   "scripts": {
