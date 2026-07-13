@@ -24,11 +24,11 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "dependencies": {
-    "@azure/functions": "^4.16.1"
+    "@azure/functions": "^4.16.2"
   },
   "devDependencies": {
-    "@types/node": "^26.1.0",
-    "linted": "41.14.0",
+    "@types/node": "^26.1.1",
+    "linted": "41.15.0",
     "typescript": "^6.0.3"
   },
   "scripts": {
