@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/node": "^26.2.0",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "linted": "42.0.1"
+    "linted": "42.1.0"
   },
   "scripts": {
     "clean": "cmd /q /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
